@@ -1,6 +1,6 @@
 import React from 'react';
-import { Person } from '../../types/Person';
 import { Link } from 'react-router-dom';
+import { Person } from '../../types/Person';
 
 interface Props {
   person?: Person;
@@ -9,7 +9,7 @@ interface Props {
 
 export const PersonLink: React.FC<Props> = ({ person, name }) => {
   if (!person) {
-    return <span>{name || '-'}</span>;
+    return <span>{name?.trim() || '-'}</span>;
   }
 
   const isFemale = person.sex === 'f';
